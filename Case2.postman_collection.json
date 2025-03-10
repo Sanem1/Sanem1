@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "f85ea891-5e84-4da3-8231-25dafb8b95b3",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41676268"
+	},
+	"item": [
+		{
+			"name": "Test1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    pm.test(\"Status code is 200 - SUCCESS\", function () {",
+							"        pm.response.to.have.status(200);  ",
+							"        console.log(\"Test Passed: API returned 200\");",
+							"    });",
+							"} else if (pm.response.code === 400) {",
+							"    pm.test(\"Status code is 400 - FAILED\", function () {",
+							"        pm.response.to.have.status(400); ",
+							"        console.log(\"Test Failed: API returned 400\");",
+							"        pm.expect(false, 'API should not return 400').to.be.true;  ",
+							"    });",
+							"} else {",
+							"    pm.test(\"Unexpected status code\", function () {",
+							"        pm.response.to.not.have.status(200);  // 200 dışı her şeyin hata olmasını sağla",
+							"        console.log(\"Test Failed: Unexpected status code returned: \" + pm.response.code);",
+							"        pm.expect(false, 'Unexpected status code').to.be.true;  // Hata mesajı vermek için",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": \"1\",\n        \"name\": \"Google Pixel 6 Pro\",\n        \"data\": {\n            \"color\": \"Cloudy White\",\n            \"capacity\": \"128 GB\"\n        }\n    },\n    {\n        \"id\": \"2\",\n        \"name\": \"Apple iPhone 12 Mini, 256GB, Blue\",\n        \"data\": null\n    },\n    {\n        \"id\": \"3\",\n        \"name\": \"Apple iPhone 12 Pro Max\",\n        \"data\": {\n            \"color\": \"Cloudy White\",\n            \"capacity GB\": 512\n        }\n    },\n    {\n        \"id\": \"4\",\n        \"name\": \"Apple iPhone 11, 64GB\",\n        \"data\": {\n            \"price\": 389.99,\n            \"color\": \"Purple\"\n        }\n    },\n    {\n        \"id\": \"5\",\n        \"name\": \"Samsung Galaxy Z Fold2\",\n        \"data\": {\n            \"price\": 689.99,\n            \"color\": \"Brown\"\n        }\n    },\n    {\n        \"id\": \"6\",\n        \"name\": \"Apple AirPods\",\n        \"data\": {\n            \"generation\": \"3rd\",\n            \"price\": 120\n        }\n    },\n    {\n        \"id\": \"7\",\n        \"name\": \"Apple MacBook Pro 16\",\n        \"data\": {\n            \"year\": 2019,\n            \"price\": 1849.99,\n            \"CPU model\": \"Intel Core i9\",\n            \"Hard disk size\": \"1 TB\"\n        }\n    },\n    {\n        \"id\": \"8\",\n        \"name\": \"Apple Watch Series 8\",\n        \"data\": {\n            \"Strap Colour\": \"Elderberry\",\n            \"Case Size\": \"41mm\"\n        }\n    },\n    {\n        \"id\": \"9\",\n        \"name\": \"Beats Studio3 Wireless\",\n        \"data\": {\n            \"Color\": \"Red\",\n            \"Description\": \"High-performance wireless noise cancelling headphones\"\n        }\n    },\n    {\n        \"id\": \"10\",\n        \"name\": \"Apple iPad Mini 5th Gen\",\n        \"data\": {\n            \"Capacity\": \"64 GB\",\n            \"Screen size\": 7.9\n        }\n    },\n    {\n        \"id\": \"11\",\n        \"name\": \"Apple iPad Mini 5th Gen\",\n        \"data\": {\n            \"Capacity\": \"254 GB\",\n            \"Screen size\": 7.9\n        }\n    },\n    {\n        \"id\": \"12\",\n        \"name\": \"Apple iPad Air\",\n        \"data\": {\n            \"Generation\": \"4th\",\n            \"Price\": \"419.99\",\n            \"Capacity\": \"64 GB\"\n        }\n    },\n    {\n        \"id\": \"13\",\n        \"name\": \"Apple iPad Air\",\n        \"data\": {\n            \"Generation\": \"4th\",\n            \"Price\": \"519.99\",\n            \"Capacity\": \"256 GB\"\n        }\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.restful-api.dev/objects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"restful-api",
+						"dev"
+					],
+					"path": [
+						"objects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    pm.test(\"Status code is 200 - SUCCESS\", function () {",
+							"        pm.response.to.have.status(200);  ",
+							"        console.log(\"Test Passed: API returned 200\");",
+							"    });",
+							"} else if (pm.response.code === 400) {",
+							"    pm.test(\"Status code is 400 - FAILED\", function () {",
+							"        pm.response.to.have.status(400); ",
+							"        console.log(\"Test Failed: API returned 400\");",
+							"        pm.expect(false, 'API should not return 400').to.be.true;  ",
+							"    });",
+							"} else {",
+							"    pm.test(\"Unexpected status code\", function () {",
+							"        pm.response.to.not.have.status(200);  // 200 dışı her şeyin hata olmasını sağla",
+							"        console.log(\"Test Failed: Unexpected status code returned: \" + pm.response.code);",
+							"        pm.expect(false, 'Unexpected status code').to.be.true;  // Hata mesajı vermek için",
+							"    });",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": \"1\",\n        \"name\": \"Google Pixel 6 Pro\",\n        \"data\": {\n            \"color\": \"Cloudy White\",\n            \"capacity\": \"128 GB\"\n        }\n    },\n    {\n        \"id\": \"2\",\n        \"name\": \"Apple iPhone 12 Mini, 256GB, Blue\",\n        \"data\": null\n    },\n    {\n        \"id\": \"3\",\n        \"name\": \"Apple iPhone 12 Pro Max\",\n        \"data\": {\n            \"color\": \"Cloudy White\",\n            \"capacity GB\": 512\n        }\n    },\n    {\n        \"id\": \"4\",\n        \"name\": \"Apple iPhone 11, 64GB\",\n        \"data\": {\n            \"price\": 389.00,\n            \"color\": \"Purple\"\n        }\n    },\n    {\n        \"id\": \"5\",\n        \"name\": \"Samsung Galaxy Z Fold2\",\n        \"data\": {\n            \"price\": 689.99,\n            \"color\": \"Brown\"\n        }\n    },\n    {\n        \"id\": \"6\",\n        \"name\": \"Apple AirPods\",\n        \"data\": {\n            \"generation\": \"3rd\",\n            \"price\": 120\n        }\n    },\n    {\n        \"id\": \"7\",\n        \"name\": \"Apple MacBook Pro 16\",\n        \"data\": {\n            \"year\": 2019,\n            \"price\": 1849.99,\n            \"CPU model\": \"Intel Core i9\",\n            \"Hard disk size\": \"1 TB\"\n        }\n    },\n    {\n        \"id\": \"8\",\n        \"name\": \"Apple Watch Series 8\",\n        \"data\": {\n            \"Strap Colour\": \"Elderberry\",\n            \"Case Size\": \"41mm\"\n        }\n    },\n    {\n        \"id\": \"9\",\n        \"name\": \"Beats Studio3 Wireless\",\n        \"data\": {\n            \"Color\": \"Red\",\n            \"Description\": \"High-performance wireless noise cancelling headphones\"\n        }\n    },\n    {\n        \"id\": \"10\",\n        \"name\": \"Apple iPad Mini 5th Gen\",\n        \"data\": {\n            \"Capacity\": \"64 GB\",\n            \"Screen size\": 7.9\n        }\n    },\n    {\n        \"id\": \"11\",\n        \"name\": \"Apple iPad Mini 5th Gen\",\n        \"data\": {\n            \"Capacity\": \"254 GB\",\n            \"Screen size\": 7.9\n        }\n    },\n    {\n        \"id\": \"12\",\n        \"name\": \"Apple iPad Air\",\n        \"data\": {\n            \"Generation\": \"4th\",\n            \"Price\": \"419.99\",\n            \"Capacity\": \"64 GB\"\n        }\n    },\n    {\n        \"id\": \"13\",\n        \"name\": \"Apple iPad Air\",\n        \"data\": {\n            \"Generation\": \"4th\",\n            \"Price\": \"519.99\",\n            \"Capacity\": \"256 GB\"\n        }\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.restful-api.dev/objects",
+					"protocol": "https",
+					"host": [
+						"api",
+						"restful-api",
+						"dev"
+					],
+					"path": [
+						"objects"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
